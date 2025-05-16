@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
                     return@setOnItemSelectedListener true
                 }
                 R.id.navigation_settings -> {
-                    loadFragment(SettingsFragment.newInstance())
+                    loadFragment(SettingsFragment())
                     return@setOnItemSelectedListener true
                 }
                 else -> false

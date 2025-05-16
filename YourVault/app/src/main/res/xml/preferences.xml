@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <SwitchPreferenceCompat
+        android:key="notifications_enabled"
+        android:title="Notificaciones"
+        android:summary="Activar o desactivar notificaciones"/>
+
+    <ListPreference
+        android:key="font_size"
+        android:title="Tamaño de letra"
+        android:entries="@array/font_size_labels"
+        android:entryValues="@array/font_size_values"
+        android:defaultValue="medium"/>
+
+    <Preference
+        android:key="logout"
+        android:title="Cerrar sesión"
+        android:summary="Salir de tu cuenta"/>
+</PreferenceScreen>

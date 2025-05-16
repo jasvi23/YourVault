@@ -1,23 +1,35 @@
 package com.example.yourvault
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import androidx.preference.PreferenceFragmentCompat
+import androidx.preference.SwitchPreferenceCompat
 
-class SettingsFragment : Fragment() {
+class SettingsFragment: PreferenceFragmentCompat() {
+    //Ahora lo que hace es usar un xml preference que hemos creado, y que por defecto en Adnroid kotlin tiene todo lo necesario para
+    // las funciones de configuracion.
+    override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
+        setPreferencesFromResource(R.xml.preferences, rootKey)
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_settings, container, false)
-    }
+        // switch de notificaciones
+        findPreference<SwitchPreferenceCompat>("notifications_enabled")?.setOnPreferenceChangeListener { pref, new ->
+            // Aquí solo guardamos el flag; las llamadas a NotificationUtils leerán este valor
+            true
+        }
 
-    companion object {
-        @JvmStatic
-        fun newInstance() = SettingsFragment()
+        // logout
+        findPreference<androidx.preference.Preference>("logout")?.setOnPreferenceClickListener {
+            // limpiar sesion
+            requireContext()
+                .getSharedPreferences("vault_prefs", 0)
+                .edit()
+                .remove("session_token")
+                .apply()
+            // volver a loginActivity
+            startActivity(Intent(requireContext(), LoginActivity::class.java)
+                .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK))
+            activity?.finish()
+            true
+        }
     }
 }
