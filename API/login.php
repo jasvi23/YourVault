@@ -1,22 +1,26 @@
 <?php
 require 'config.php';
-$input = json_decode(file_get_contents('php://input'), true);
+$in = json_decode(file_get_contents('php://input'), true);
 
-if (empty($input['email']) || empty($input['password'])) {
+if (empty($in['email'])||empty($in['password'])) {
     http_response_code(400);
-    echo json_encode(['error' => 'Email y contraseña obligatorios']);
+    echo json_encode(['error'=>'Email y contraseña obligatorios']);
     exit;
 }
 
-$stmt = $pdo->prepare("SELECT id, password_hash FROM users WHERE email = ?");
-$stmt->execute([$input['email']]);
-$user = $stmt->fetch(PDO::FETCH_ASSOC);
+$stmt = $pdo->prepare("
+  SELECT id,current_password_hash 
+    FROM users WHERE email=?
+");
+$stmt->execute([$in['email']]);
+$user = $stmt->fetch();
 
-if (!$user || !password_verify($input['password'], $user['password_hash'])) {
+if (!$user || !password_verify($in['password'],$user['current_password_hash'])) {
     http_response_code(401);
-    echo json_encode(['error' => 'Credenciales inválidas']);
+    echo json_encode(['error'=>'Credenciales inválidas']);
     exit;
 }
 
-// Aquí podrías generar un JWT; para simplificar devolvemos el userId
-echo json_encode(['userId' => $user['id']]);
+// Devolvemos sólo el ID; el masterPassword lo tendrá el usuario al loguearse
+echo json_encode(['userId'=>$user['id']]);
+

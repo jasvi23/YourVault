@@ -1,9 +1,11 @@
-package com.example.yourvault
+package com.example.yourvault.ui.fragments
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.SwitchPreferenceCompat
+import com.example.yourvault.R
+import com.example.yourvault.ui.LoginActivity
 
 class SettingsFragment: PreferenceFragmentCompat() {
     //Ahora lo que hace es usar un xml preference que hemos creado, y que por defecto en Adnroid kotlin tiene todo lo necesario para

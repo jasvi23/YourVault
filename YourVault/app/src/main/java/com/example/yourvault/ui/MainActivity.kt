@@ -1,8 +1,12 @@
-package com.example.yourvault
+package com.example.yourvault.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import com.example.yourvault.R
+import com.example.yourvault.ui.fragments.GeneratorFragment
+import com.example.yourvault.ui.fragments.SettingsFragment
+import com.example.yourvault.ui.fragments.VaultFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {

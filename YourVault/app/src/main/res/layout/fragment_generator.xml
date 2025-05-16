@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#BBDEFB"
     android:padding="16dp"
-    tools:context=".GeneratorFragment">
+    tools:context=".ui.fragments.GeneratorFragment">
 
     <!-- Campo de contraseña con icono de ojo -->
     <com.google.android.material.textfield.TextInputLayout
