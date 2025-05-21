@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">YourVault</string>
+    <string name="entrar">Entrar</string>
+    <string name="contrase_a">Contraseña</string>
+    <string name="usuario">Usuario</string>
+    <string name="iniciar_sesi_n">Iniciar Sesión</string>
+    <string name="registrarse">Registrarse</string>
+    <string name="registro">Registro</string>
+    <string name="cancelar">Cancelar</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="nombre_del_servicio">Nombre del servicio</string>
+    <string name="hidden_pass">************</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="editar">Editar</string>
+    <string name="copiar">Copiar</string>
+    <string name="mostrar_ocultar">Mostrar/Ocultar</string>
+</resources>

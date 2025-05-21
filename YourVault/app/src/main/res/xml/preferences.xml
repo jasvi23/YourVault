@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <SwitchPreferenceCompat
+        android:key="notifications_enabled"
+        android:title="Notificaciones"
+        android:summary="Activar o desactivar notificaciones"/>
+    <Preference
+        android:key="contact_support"
+        android:title="Contactar soporte"
+        android:summary="Envía un email a soporte técnico" />
+    <Preference
+        android:key="logout"
+        android:title="Cerrar sesión"
+        android:summary="Salir de tu cuenta"/>
+</PreferenceScreen>

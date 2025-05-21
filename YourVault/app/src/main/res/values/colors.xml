@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="lightblue">#E3F2FD</color>
+    <!-- main app -->
+    <color name="jade_light">#A4DBC4</color>
+    <color name="jade_mint">#76C7B7</color>
+    <color name="jade_medium">#4CA495</color>
+    <color name="jade_dark">#2D7F72</color>
+    <color name="jade_deep">#1E5C51</color>
+
+    <!-- Contraste -->
+    <color name="coral_dark">#D95F4F</color>
+    <color name="coral_light">#F2765E</color>
+</resources>
